@@ -6,10 +6,10 @@
 		"default_icon": "svd-favicon-32x32.png"
 	},
 	"background": {
-		"scripts": ["libs/jquery-3.2.1.min.js", "libs/js.cookie.js", "background.js"]
+		"scripts": ["libs/jquery-3.2.1.min.js", "background.js"]
 	},
 	"permissions": [
 	  "cookies",
-	  "*://*.svd.se/"
+	  "http://*/*", "https://*/*"
 	]
 }

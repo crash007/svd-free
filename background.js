@@ -1,15 +1,31 @@
-var clicks = 0;
+var cookieToListenTo = "svd-mc";
 
-function increment() {
-  chrome.browserAction.setBadgeText({text: (++clicks).toString()});
-}
 
-chrome.browserAction.onClicked.addListener(testar);
+chrome.browserAction.onClicked.addListener(removeCookies);
 
-function testar() {
-console.log("test");
+function removeCookies() {
+	chrome.cookies.getAll({domain: "svd.se"}, function(cookies) {
+		console.log(cookies);
+	});
 }
 
 jQuery(document).ready(function(){
-console.log("ready");
+	console.log("ready");
+
+	chrome.cookies.get({url: "https://www.svd.se", name: "svd-mc"}, function(cookie) {
+		console.log(cookie);
+		chrome.browserAction.setBadgeText({text: cookie.value});
+	});
+
+	chrome.cookies.onChanged.addListener(function (changeInfo) {
+		if(changeInfo.cookie.name == cookieToListenTo) {
+			var tmpValue = changeInfo.cookie.value;
+			console.log(tmpValue);
+			chrome.browserAction.setBadgeText({text: tmpValue});
+			if(tmpValue >= 19) {
+							
+			}
+		}
+    });
+
 });
