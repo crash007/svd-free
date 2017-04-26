@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
 		if(changeInfo.cookie.name == cookieToListenTo) {
 			var tmpValue = changeInfo.cookie.value;
 			console.log(tmpValue);
-			chrome.browserAction.setBadgeText({text: tmpValue});
+			chrome.browserAction.setBadgeText({text: (numFreeArticles-tmpValue).toString()});
 			if(tmpValue >= (numFreeArticles-1)) {
 				removeCookies();		
 			}
@@ -44,12 +44,14 @@ function updateBadgeCounter(){
 	
 	chrome.cookies.get({url: "https://www.svd.se", name: cookieToListenTo}, function(cookie) {
 		console.log(cookie);
-		var count = '0';			
+		var count = 0;			
 
 		if(cookie !=null){
 			count = cookie.value;
 		}
+		
+		var badgeText = numFreeArticles - count;
 
-		chrome.browserAction.setBadgeText({text: count});
+		chrome.browserAction.setBadgeText({text: badgeText.toString()});
 	});
 };
