@@ -53,5 +53,7 @@ function updateBadgeCounter(){
 		var badgeText = numFreeArticles - count;
 
 		chrome.browserAction.setBadgeText({text: badgeText.toString()});
+		
 	});
+	
 };
