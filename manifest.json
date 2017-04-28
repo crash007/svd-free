@@ -3,8 +3,12 @@
 	"name": "SvD Free",
 	"version": "0.1",
 	"description": "Unlimited number of free articles on svd.se.",
+	"icons": 
+		{ 
+	          "128": "icon128.png" 
+		},
 	"browser_action": {
-		"default_icon": "svd-favicon-32x32.png",
+		
 		 "default_title": "SvD Free - click to remove cookies"
 	},
 	"background": {
