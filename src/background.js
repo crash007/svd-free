@@ -23,7 +23,7 @@ function removeCookies() {
 }
 
 jQuery(document).ready(function(){
-	console.log("ready");
+	
 
 	updateBadgeCounter();
 
