@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2,
+	"name": "SvD Free",
+	"version": "0.1",
+	"description": "Unlimited number of free articles on svd.se.",
+	"icons": 
+		{ 
+	          "128": "icon128.png" 
+		},
+	"browser_action": {
+		
+		 "default_title": "SvD Free - click to remove cookies"
+	},
+	"background": {
+		"scripts": ["libs/jquery-3.2.1.min.js", "background.js"]
+	},
+	"permissions": [
+	  "cookies",
+	  "*://*.svd.se/*"
+	]
+}
