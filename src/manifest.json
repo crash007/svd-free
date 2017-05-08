@@ -11,7 +11,6 @@
 		},
 	"browser_action": {
 		
-		 "default_title": "SvD Free - click to remove cookies manually"
 	},
 	"background": {
 		"scripts": ["libs/jquery-3.2.1.min.js", "background.js"]
