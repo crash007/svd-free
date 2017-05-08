@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "SvD Free",
-	"version": "0.1",
+	"version": "0.2",
 	"description": "Unlimited number of free articles on svd.se.",
 	"homepage_url": "https://github.com/crash007/svd-free",
 	"author": "crash007",
