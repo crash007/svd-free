@@ -1,22 +1,28 @@
 {
-	"manifest_version": 2,
-	"name": "SvD Free",
-	"version": "0.21",
-	"description": "Unlimited number of free articles on svd.se.",
-	"homepage_url": "https://github.com/crash007/svd-free",
-	"author": "crash007",
-	"icons": 
-		{ 
-	          "128": "icon128.png" 
-		},
-	"browser_action": {
-		
-	},
-	"background": {
-		"scripts": ["libs/jquery-3.2.1.min.js", "background.js"]
-	 	
-	},
-	"permissions": [
+    "manifest_version": 2,
+    "name": "SvD Free",
+    "version": "0.22",
+    "description": "Unlimited number of free articles on svd.se.",
+    "homepage_url": "https://github.com/crash007/svd-free",
+    "author": "crash007",
+    "content_scripts": [
+        {
+            "matches": ["http://www.svd.se/*", "https://www.svd.se/*"],
+            "js": ["libs/jquery-3.2.1.min.js", "adblock-popup-remover.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "icons": {
+        "128": "icon128.png"
+    },
+    "browser_action": {
+
+    },
+    "background": {
+        "scripts": ["libs/jquery-3.2.1.min.js", "background.js"]
+
+    },
+    "permissions": [
 	  "cookies",
 	  "*://*.svd.se/*"
 	]
